@@ -1,0 +1,13 @@
+li = [2,2,1,1,1,2,2]
+avg = len(li) // 2
+dici= {}
+ans = 0 
+for i in li:
+    if i in dici:
+        dici[i] += 1
+    else:
+        dici[i] = 1
+for i in dici:
+    if dici[i] > avg:
+       ans += i 
+print(ans)

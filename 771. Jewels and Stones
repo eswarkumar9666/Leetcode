@@ -1,0 +1,13 @@
+s = "aAAbbbb"
+jewels = "aA"
+dici= {}
+ans = 0 
+for i in s:
+    if i not in dici:
+        dici[i] = 1
+    elif i in dici:
+        dici[i] += 1
+for i in jewels:
+    if i in dici:
+        ans += dici[i]
+print(ans)

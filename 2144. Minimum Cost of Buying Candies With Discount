@@ -1,0 +1,12 @@
+li = [6,5,7,9,2,2]
+li.sort()
+n = len(li)
+ans = 0
+count = 0
+for i in range(n-1,-1,-1):
+    if count == 2:
+        count  = 0
+    else:
+        ans = ans+li[i]
+        count+=1
+print(ans)

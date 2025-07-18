@@ -1,0 +1,15 @@
+li = [0,0,1,1,0,0,1,1,1,0,1,1,0,0,0,1,1,1,1]
+n = len(li)
+temp = 0
+ans = 0
+l = 0
+k = 3
+for i in range(n):
+    if li[i] == 0:
+        temp += 1
+    while temp > k:
+        if li[l] == 0:
+            temp -= 1
+        l += 1
+    ans = max(ans,i-l+1)
+print(ans)

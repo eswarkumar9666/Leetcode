@@ -1,0 +1,20 @@
+li = "TTFTTFTT"
+n= len(li)
+ans = 0
+countT = 0
+countF = 0
+k = 1
+l = 0
+for i in range(n):
+    if li[i] == "T":
+        countT +=1
+    else:
+        countF += 1
+    while min(countT,countF) > k:
+        if li[l] == "T":
+            countT -=1
+        else:
+            countF-=1
+        l+=1
+    ans = max(ans,i-l+1)
+print(ans)

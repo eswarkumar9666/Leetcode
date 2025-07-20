@@ -1,0 +1,15 @@
+li = "abcabcbb"
+n = len(li)
+temp = set()
+l = 0
+ans = 0
+for i in range(n):
+    if li[i] not in temp:
+        temp.add(li[i])
+    else:
+        while li[i]in temp:
+            temp.remove(li[l])
+            l +=1
+        temp.add(li[i])
+    ans = max(ans,i-l+1)
+print(ans)

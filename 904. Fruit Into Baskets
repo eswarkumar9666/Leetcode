@@ -1,0 +1,17 @@
+li = [1,1,2,3,1]
+n = len(li)
+dici = {}
+l =0
+ans = 0
+for i in range(n):
+    if li[i] not in dici:
+        dici[li[i]] = 1
+    else:
+        dici[li[i]] +=1
+    while len(dici) > 2:
+        dici[li[l]] -= 1
+        if dici[li[l]] == 0:
+            del dici[li[l]]
+        l += 1
+    ans = max(ans,i-l+1)
+print(ans)

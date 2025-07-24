@@ -1,0 +1,16 @@
+li = [1,2,3,4,5]
+target = 11
+ans = float("inf")
+temp =0
+l = 0
+n = len(li)
+for i in range(n):
+    temp +=li[i]
+    while temp > target:
+        ans = min(ans,i-l+1)
+        temp -=li[l]
+        l +=1
+if ans == float("inf"):
+    print(0)
+else:
+    print(ans)

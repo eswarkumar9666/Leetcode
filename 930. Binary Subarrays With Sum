@@ -1,0 +1,24 @@
+def atmostk(nums,goal):
+    if goal < 0:
+        return 0 
+    n = len(nums)
+    l = 0
+    ans = 0
+    temp = 0
+    for i in range(n):
+        if nums[i] == 1:
+            temp +=1
+        while temp > goal:
+            if nums[l] == 1:
+                temp -=1
+            l+=1
+        ans += i-l+1
+    return ans
+print (atmostk(nums,goal) - atmostk(nums,goal-1))
+
+
+
+nums = [1,0,1,0,1]
+goal = 2
+ans = atmostk(nums,goal)
+print(ans)

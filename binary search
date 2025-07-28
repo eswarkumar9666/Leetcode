@@ -1,0 +1,8 @@
+def binary(nums,target):
+    if target in nums:
+        index = nums.index(target)
+    print(index)
+
+nums = [-1,2,3,4,5]
+target = 5
+binary(nums,target)

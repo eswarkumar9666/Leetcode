@@ -1,0 +1,23 @@
+def atmostk(nums,k):
+    n= len(nums)
+    dici = {} 
+    ans = 0
+    l = 0
+    for i in range(n):
+        if nums[i] not in dici:
+            dici[nums[i]] =1
+        else:
+            dici[nums[i]] +=1
+        while len(dici) > k:
+            dici[nums[l]] -=1
+            if dici[nums[l]] == 0:
+                dici.pop(nums[l])
+            l+=1
+        ans += i-l+1
+    return ans
+
+
+nums = [1,2,1,3,4]
+k = 3
+ans = atmostk(nums,k) - atmostk(nums,k-1)
+print(ans)

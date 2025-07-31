@@ -17,3 +17,6 @@ class Solution:
         b = atMostK(nums,k-1)
         ans = a-b
         return ans
+
+
+# Ame ledhu bro just commit chestuna 
